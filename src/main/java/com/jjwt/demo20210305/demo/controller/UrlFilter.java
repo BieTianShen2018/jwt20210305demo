@@ -29,8 +29,8 @@ public class UrlFilter implements Filter {
         MDC.put("testLog", UUID.randomUUID().toString());
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         String requestURI = req.getRequestURI();
-        logger.error("--------------------->过滤器：请求地址"+requestURI);
-        if(!requestURI.contains("info")){
+        logger.error("--------------------->过滤器：请求地址666 "+requestURI);
+        if(requestURI.contains("info")){
             servletRequest.getRequestDispatcher("/failed").forward(servletRequest, servletResponse);
         }else{
             filterChain.doFilter(servletRequest, servletResponse);

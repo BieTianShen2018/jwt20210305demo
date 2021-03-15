@@ -34,6 +34,12 @@
             <version>3.14.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <!-- optional=true,依赖不会往下传递，如果有项目依赖本项目，并且想要使用devtools，需要重新引入 -->
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 
@@ -42,6 +48,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <!-- 没有该项配置，测试devtools不起作用
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>-->
             </plugin>
         </plugins>
     </build>

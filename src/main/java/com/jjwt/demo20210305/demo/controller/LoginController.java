@@ -1,5 +1,6 @@
 package com.jjwt.demo20210305.demo.controller;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,4 +30,15 @@ public class LoginController {
         return map;
     }
 
+    @Value(value = "${test-key}")
+    private String testKey;
+
+
+    @RequestMapping("testApi")
+    public String testHotDeployment() {
+
+        return "Wonderful :"+testKey;
+
+
+    }
 }
